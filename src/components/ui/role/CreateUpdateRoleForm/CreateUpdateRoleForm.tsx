@@ -16,7 +16,6 @@ import { StatusCode } from 'constants/errorConstants'
 import { PermissionsType, RoleType } from 'models/role'
 import { useQuery } from 'react-query'
 import { observer } from 'mobx-react'
-import { array } from 'prop-types'
 
 interface Props {
   defaultValues?: RoleType
