@@ -15,10 +15,11 @@ import * as API from 'api/Api'
 import { StatusCode } from 'constants/errorConstants'
 import authStore from 'stores/auth.store'
 import Avatar from 'react-avatar'
+import { observer } from 'mobx-react'
 
 const RegisterForm: FC = () => {
   const navigate = useNavigate()
-  const { handleSubmit, errors, control, reset } = useRegisterForm()
+  const { handleSubmit, errors, control } = useRegisterForm()
   const [apiError, setApiError] = useState('')
   const [showError, setShowError] = useState(false)
 
@@ -252,7 +253,7 @@ const RegisterForm: FC = () => {
           )}
         />
         <div className="d-flex justify-content-between align-items-center mb-2">
-          <p className="mb-0">Don{"'"}t have an account yet?</p>
+          <p className="mb-0">Dont have an account yet?</p>
           <Link className="text-decoration-none text-end" to={routes.SIGNUP}>
             Create account
           </Link>
@@ -275,4 +276,4 @@ const RegisterForm: FC = () => {
   )
 }
 
-export default RegisterForm
+export default observer(RegisterForm)
